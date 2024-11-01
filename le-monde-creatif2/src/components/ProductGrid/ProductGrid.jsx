@@ -46,7 +46,7 @@ const products = [
   },
 ];
 
-const ProductGrid = () => {
+const ProductGrid = ({setChangeVue}) => {
   const productSectionStyle = {
     width: '100%',
     maxWidth: '1248px',
@@ -93,7 +93,7 @@ const ProductGrid = () => {
     <section style={productSectionStyle}>
       <div style={sectionHeaderStyle}>
         <h2 style={sectionTitleStyle}>Shop The Latest</h2>
-        <a href="#view-all" style={viewAllStyle}>
+        <a href="#view-all" onClick={()=>{setChangeVue("shop")}} style={viewAllStyle}>
           View All
         </a>
       </div>

@@ -10,6 +10,7 @@ const ProductCard = ({ name, price, image }) => {
     alignItems: 'flex-start',
     fontFamily: '"DM Sans", sans-serif',
     position: 'relative',
+    cursor:'pointer'
   };
 
   const productImageStyle = {
@@ -59,6 +60,7 @@ const ProductCard = ({ name, price, image }) => {
       style={productCardStyle}
       onMouseEnter={() => setIsHovered(true)} // Active le survol
       onMouseLeave={() => setIsHovered(false)} // Désactive le survol
+
     >
       <img src={image} alt={name} style={productImageStyle} />
       <div style={iconGroupStyle}>

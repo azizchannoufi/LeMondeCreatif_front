@@ -23,6 +23,8 @@ const Hero = () => {
     width: '91%',
     objectFit: 'cover',
     objectPosition: 'center',
+    cursor: "pointer"
+    
   };
 
   const heroContentStyle = {

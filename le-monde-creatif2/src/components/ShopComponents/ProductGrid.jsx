@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductFilter from "./ProductFilter";
 import ProductCard from "./ProductCard";
 
@@ -652,7 +652,15 @@ const products = [
   },
 ];
 
-function ProductGrid({setChangeVue , setProductSlected}) {
+function ProductGrid({ setChangeVue, setProductSlected }) {
+  const [productss] = useState(products); // Liste des produits
+  const [searchQuery, setSearchQuery] = useState(""); // État de la requête de recherche
+
+  // Filtrer les produits en fonction de la requête de recherche
+  const filteredProducts = productss.filter((product) =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const productGridStyle = {
     width: "100%",
     maxWidth: "1248px",
@@ -670,7 +678,7 @@ function ProductGrid({setChangeVue , setProductSlected}) {
 
   const gridContainerStyle = {
     display: "flex",
-    gap: "20px",
+    gap: "50px",
   };
 
   const productListStyle = {
@@ -703,10 +711,16 @@ function ProductGrid({setChangeVue , setProductSlected}) {
     <section style={productGridStyle}>
       <h2 style={titleStyle}>Shop The Latest</h2>
       <div style={gridContainerStyle}>
-        <ProductFilter />
-        <div style={productListStyle}>
-          {products.map((product) => (
-            <ProductCard key={product.id} {...product} setChangeVue={setChangeVue} setProductSlected={setProductSlected} />
+        {/* Passer la recherche et le setter au composant ProductFilter */}
+        <ProductFilter searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <div style={productListStyle} className="productList">
+          {filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              {...product}
+              setChangeVue={setChangeVue}
+              setProductSlected={setProductSlected}
+            />
           ))}
         </div>
       </div>

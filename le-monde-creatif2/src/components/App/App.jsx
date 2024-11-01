@@ -39,6 +39,7 @@ const App = () => {
 
   const logoAccentStyle = {
     color: "rgba(0, 0, 0, 1)",
+    cursor: "pointer"
   };
 
   const navigationStyle = {
@@ -111,7 +112,7 @@ const App = () => {
         <div>
       <main style={mainStyle}>
         <Hero />
-        <ProductGrid />
+        <ProductGrid  setChangeVue={setChangeVue}/>
       </main>
       
     </div>
@@ -172,7 +173,7 @@ const App = () => {
       <h1 style={logoStyle} onClick={()=>{setChangeVue('home')
         window.scrollTo({ top: 0, behavior: 'smooth' })
       }}>
-        S<span style={logoAccentStyle}>HOPPE</span>
+        <span style={logoAccentStyle}>SHOPPE</span>
       </h1>
       <nav style={navigationStyle}>
         <ul style={navListStyle}>
