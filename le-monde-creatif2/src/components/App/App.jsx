@@ -93,7 +93,7 @@ const App = () => {
     flexDirection: "column",
     overflow: "hidden",
     alignItems: "center",
-    padding: "82px 80px",
+    padding: "80px 80px",
   };
 
   const mainStyle = {
@@ -173,7 +173,7 @@ const App = () => {
       <h1 style={logoStyle} onClick={()=>{setChangeVue('home')
         window.scrollTo({ top: 0, behavior: 'smooth' })
       }}>
-        <span style={logoAccentStyle}>SHOPPE</span>
+        <span style={logoAccentStyle}>Le Monde Creatif</span>
       </h1>
       <nav style={navigationStyle}>
         <ul style={navListStyle}>

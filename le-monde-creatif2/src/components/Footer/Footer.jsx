@@ -143,7 +143,7 @@ const Footer = () => {
           style={footerLogoStyle}
         />
         <p style={copyrightStyle}>
-          © 2021 Shelly. Terms of use and privacy policy.
+          © 2024 By Aziz Channoufi. Terms of use and privacy policy.
         </p>
       </div>
     </footer>
