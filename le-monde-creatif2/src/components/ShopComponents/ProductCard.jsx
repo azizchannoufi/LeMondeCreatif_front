@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductCard({ name, price, image, discount, soldOut, setChangeVue , setProductSlected}) {
+function ProductCard({ titre, prix, image, pourcentageRemise, soldOut, setChangeVue , setProductSlected}) {
   const cardStyle = {
     display: "flex",
     flexDirection: "column",
@@ -55,12 +55,12 @@ function ProductCard({ name, price, image, discount, soldOut, setChangeVue , set
     <article style={cardStyle}>
       
       <div style={imageWrapperStyle} >
-        <img src={image} alt={name} style={imageStyle} onClick={()=>{setProductSlected({ 'name':name, "price":price, "image":image, "discount":discount, "soldOut":soldOut})
+        <img src={image} alt={titre} style={imageStyle} onClick={()=>{setProductSlected({ 'name':titre, "price":prix, "image":image, "pourcentageRemise":pourcentageRemise, "soldOut":soldOut})
           setChangeVue("product")
           window.scrollTo({ top: 0, behavior: 'smooth' })}}/>
-        {discount && (
+        {pourcentageRemise && (
           <span style={{ ...badgeStyle, backgroundColor: "#d9534f" }}>
-            -{discount}%
+            -{pourcentageRemise}%
           </span>
         )}
         {soldOut && (
@@ -69,8 +69,8 @@ function ProductCard({ name, price, image, discount, soldOut, setChangeVue , set
           </span>
         )}
       </div>
-      <h3 style={nameStyle}>{name}</h3>
-      <p style={priceStyle}>${price.toFixed(2)}</p>
+      <h3 style={nameStyle}>{titre}</h3>
+      <p style={priceStyle}>${prix}</p>
     </article>
   );
 }
